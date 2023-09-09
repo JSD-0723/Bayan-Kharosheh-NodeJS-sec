@@ -36,7 +36,7 @@ app.post("/books", (req, res) => {
     return res.status(400).send("Invalid request");
   }
   const books = getBooks();
-  addBook([...books, { id: id, name: name }]);
+  addBook([...books, { id: Number(id), name: name }]);
   res.render("books", { books });
 });
 
